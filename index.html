@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Cipher Encryption Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Block Cipher Encryption Tool</h1>
+            <p>Enkripsi dan Dekripsi Teks menggunakan Mode Cipher Block</p>
+        </header>
+
+        <section class="input-section">
+
+            <label for="inputText">Teks / Pesan</label>
+            <textarea id="inputText" placeholder="Masukkan teks yang ingin dienkripsi atau didekripsi"></textarea>
+
+            <label for="key">Key / Kunci</label>
+            <input type="text" id="key" placeholder="Masukkan kunci enkripsi">
+
+            <label for="mode">Mode Cipher</label>
+            <select id="mode">
+                <option value="ecb">ECB - Electronic Code Book</option>
+                <option value="cbc">CBC - Cipher Block Chaining</option>
+                <option value="ofb">OFB - Output Feedback</option>
+                <option value="cfb">CFB - Cipher Feedback</option>
+            </select>
+
+            <label for="iv">Initialization Vector (IV)</label>
+            <input type="text" id="iv" placeholder="Digunakan untuk CBC, OFB, dan CFB">
+
+        </section>
+
+        <section class="button-section">
+
+            <button id="encryptBtn">Encrypt</button>
+            <button id="decryptBtn">Decrypt</button>
+
+        </section>
+
+        <section class="output-section">
+
+            <label for="outputText">Hasil</label>
+            <textarea id="outputText" readonly placeholder="Hasil enkripsi / dekripsi akan muncul di sini"></textarea>
+
+        </section>
+
+        <section class="notes-section">
+
+            <h3>Catatan Penggunaan</h3>
+
+            <ul>
+                <li><b>Key / Kunci</b> dapat berupa kombinasi huruf atau angka, contoh: <code>kunci123</code></li>
+
+                <li><b>Initialization Vector (IV)</b> digunakan pada mode <b>CBC, OFB, dan CFB</b>.</li>
+
+                <li>IV dapat berupa teks bebas seperti contoh: <code>init</code> atau <code>1234</code></li>
+
+                <li>Mode <b>ECB</b> tidak memerlukan IV.</li>
+
+                <li>Sistem ini menggunakan <b>block size 4 karakter</b> untuk memproses teks.</li>
+
+                <li>Jika teks tidak habis dibagi 4, maka sistem akan menambahkan spasi secara otomatis.</li>
+
+            </ul>
+
+        </section>
+
+        <footer>
+            <p>Project Keamanan Sistem - Block Cipher Mode</p>
+        </footer>
+
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
